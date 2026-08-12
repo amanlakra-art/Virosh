@@ -12,6 +12,8 @@ type Flavour = {
   ink: string;
 };
 
+type FormulaMode = "with-creatine" | "without-creatine";
+
 const flavours: Flavour[] = [
   {
     id: "original",
@@ -60,41 +62,57 @@ const flavours: Flavour[] = [
   },
 ];
 
-const essentials = [
+const commonEssentials = [
   { dose: "25 g", name: "Yeast protein", role: "Daily protein foundation", mark: "P" },
-  { dose: "3 g", name: "Creatine mono", role: "Practical performance support", mark: "C" },
   { dose: "4.5 g", name: "PHGG fibre", role: "Gentle daily fibre", mark: "F" },
-  { dose: "200 mg", name: "Algal DHA", role: "Plant-sourced omega-3", mark: "Ω" },
-  { dose: "600 IU", name: "Vitamin D3", role: "A critical daily essential", mark: "D" },
-  { dose: "2.5 μg", name: "Vitamin B12", role: "Everyday micronutrient support", mark: "B" },
-  { dose: "120 mg", name: "Magnesium", role: "Meaningful mineral dose", mark: "Mg" },
-  { dose: "8.5 mg", name: "Zinc", role: "Daily mineral support", mark: "Zn" },
+  { dose: "600 IU", name: "Vitamin D3", role: "100% adult RDA target*", mark: "D" },
+  { dose: "2.2 μg", name: "Vitamin B12", role: "100% adult RDA target*", mark: "B" },
+  { dose: "440 mg", name: "Magnesium", role: "100% adult RDA target*", mark: "Mg" },
+  { dose: "17 mg", name: "Zinc", role: "100% adult RDA target*", mark: "Zn" },
 ];
 
-const formulationRows = [
+const commonFormulationRows = [
   { group: "Core blend", item: "Yeast protein", amount: "25 g", form: "Verified protein contribution" },
-  { group: "Core blend", item: "Creatine", amount: "3 g", form: "Creatine monohydrate" },
   { group: "Core blend", item: "Dietary fibre", amount: "4.5 g", form: "PHGG" },
-  { group: "Core blend", item: "Omega-3 DHA", amount: "200 mg", form: "Algal DHA" },
-  { group: "Vitamins", item: "Vitamin D3", amount: "15 μg / 600 IU", form: "Vitamin D3" },
-  { group: "Vitamins", item: "Vitamin B1", amount: "1.4 mg", form: "Thiamine" },
-  { group: "Vitamins", item: "Vitamin B5", amount: "5 mg", form: "Pantothenic acid" },
-  { group: "Vitamins", item: "Vitamin B7", amount: "40 μg", form: "Biotin" },
-  { group: "Vitamins", item: "Vitamin B9", amount: "300 μg", form: "Folate" },
-  { group: "Vitamins", item: "Vitamin B12", amount: "2.5 μg", form: "Vitamin B12" },
-  { group: "Vitamins", item: "Vitamin B6", amount: "1.9 mg", form: "Vitamin B6" },
-  { group: "Vitamins", item: "Vitamin C", amount: "40 mg", form: "Ascorbic acid equivalent" },
-  { group: "Vitamins", item: "Vitamin E", amount: "5 mg", form: "Alpha-tocopherol equivalent" },
-  { group: "Minerals", item: "Magnesium", amount: "120 mg", form: "Elemental magnesium" },
-  { group: "Minerals", item: "Zinc", amount: "8.5 mg", form: "Elemental zinc" },
-  { group: "Minerals", item: "Selenium", amount: "20 μg", form: "Total after native assay" },
+  { group: "Vitamins", item: "Vitamin D3", amount: "15 μg / 600 IU", form: "Cholecalciferol in a stable dry premix" },
+  { group: "Vitamins", item: "Vitamin B12", amount: "2.2 μg", form: "Cyanocobalamin or hydroxocobalamin premix" },
+  { group: "Minerals", item: "Magnesium", amount: "440 mg elemental", form: "Magnesium bisglycinate / glycinate; assay to confirm" },
+  { group: "Minerals", item: "Zinc", amount: "17 mg elemental", form: "Permitted high-availability source; citrate provisional" },
 ];
+
+const formulaVariants = {
+  "with-creatine": {
+    label: "Active Base",
+    shortLabel: "With creatine",
+    serving: "41–42 g",
+    proof: "3 g",
+    proofLabel: "creatine",
+    rationale: "For a sharper performance position and stronger stack-collapse story.",
+  },
+  "without-creatine": {
+    label: "Core Base",
+    shortLabel: "Without creatine",
+    serving: "38–39 g",
+    proof: "0 g",
+    proofLabel: "creatine",
+    rationale: "For broader everyday use with the same protein, fibre and focused micronutrient stack.",
+  },
+} satisfies Record<FormulaMode, { label: string; shortLabel: string; serving: string; proof: string; proofLabel: string; rationale: string }>;
 
 const shots = flavours.slice(1);
 
 export default function Home() {
   const [activeId, setActiveId] = useState("mango");
+  const [formulaMode, setFormulaMode] = useState<FormulaMode>("with-creatine");
   const active = flavours.find((flavour) => flavour.id === activeId) ?? flavours[0];
+  const formula = formulaVariants[formulaMode];
+  const hasCreatine = formulaMode === "with-creatine";
+  const essentials = hasCreatine
+    ? [commonEssentials[0], { dose: "3 g", name: "Creatine mono", role: "Practical performance support", mark: "C" }, ...commonEssentials.slice(1)]
+    : commonEssentials;
+  const formulationRows = hasCreatine
+    ? [commonFormulationRows[0], { group: "Core blend", item: "Creatine", amount: "3 g", form: "Micronized creatine monohydrate" }, ...commonFormulationRows.slice(1)]
+    : commonFormulationRows;
 
   return (
     <main
@@ -116,7 +134,7 @@ export default function Home() {
           <a href="#people">People</a>
           <a href="#flavours">Flavours</a>
         </div>
-        <span className="concept-tag">NPD concept · v1</span>
+        <span className="concept-tag">NPD concept · v2</span>
       </nav>
 
       <section className="hero section-pad" id="top">
@@ -124,11 +142,11 @@ export default function Home() {
           <div className="eyebrow"><span>Daily essentials</span><i /> <span>Made playable</span></div>
           <h1>Same strong base.<br /><em>Pick your play.</em></h1>
           <p className="hero-lead">
-            A serious yeast-protein blend with creatine, fibre, omega-3 and critical vitamins & minerals. Finish it differently whenever the mood changes.
+            A serious yeast-protein blend with fibre and four focused micronutrients. Choose the base with or without creatine, then finish it differently whenever the mood changes.
           </p>
           <div className="hero-proof">
             <div><strong>25 g</strong><span>protein</span></div>
-            <div><strong>3 g</strong><span>creatine</span></div>
+            <div><strong>{formula.proof}</strong><span>{formula.proofLabel}</span></div>
             <div><strong>0 g</strong><span>added sugar*</span></div>
           </div>
           <a className="text-link" href="#formula">Explore the base <span aria-hidden="true">↓</span></a>
@@ -191,7 +209,7 @@ export default function Home() {
           </div>
           <div className="tax-receipt">
             <span className="receipt-label">THE OLD ROUTINE</span>
-            {['Protein tub', 'Creatine jar', 'Fibre pack', 'Omega-3', 'Vitamin D3', 'B12 + minerals'].map((item, index) => (
+            {['Protein tub', 'Creatine jar', 'Fibre pack', 'Vitamin D3', 'Vitamin B12', 'Magnesium + zinc'].map((item, index) => (
               <div key={item}><span>{String(index + 1).padStart(2, '0')}</span>{item}<b>+</b></div>
             ))}
             <p><span>TOTAL</span><strong>TOO MUCH FRICTION</strong></p>
@@ -205,6 +223,26 @@ export default function Home() {
           <h2>Built to earn<br />its place <em>daily.</em></h2>
           <p>Every serving starts identical. Effective-dose thinking up front; sensory and regulatory validation before commercial lock.</p>
         </div>
+        <div className="formula-selector" aria-label="Compare proposed formulations">
+          <div>
+            <span>TWO FORMULATION ROUTES</span>
+            <p>Creatine is the only difference. Every other delivered target stays matched.</p>
+          </div>
+          <div className="formula-selector-buttons" role="group" aria-label="Select a proposed formulation">
+            {(Object.keys(formulaVariants) as FormulaMode[]).map((mode) => (
+              <button
+                key={mode}
+                className={formulaMode === mode ? "active" : ""}
+                onClick={() => setFormulaMode(mode)}
+                aria-pressed={formulaMode === mode}
+              >
+                <span>{formulaVariants[mode].label}</span>
+                <b>{formulaVariants[mode].shortLabel}</b>
+              </button>
+            ))}
+          </div>
+          <p className="formula-selector-rationale" aria-live="polite"><b>{formula.label}:</b> {formula.rationale}</p>
+        </div>
         <div className="formula-grid">
           {essentials.map((item, index) => (
             <article className="formula-card" key={item.name}>
@@ -216,18 +254,18 @@ export default function Home() {
             </article>
           ))}
           <article className="formula-card formula-card-end">
-            <span>+ B1 · B5 · B6 · B7 · B9 · C · E · selenium</span>
-            <strong>One honest scoop.</strong>
-            <p>Target base serving: 39.5–40.5 g before a flavour shot.</p>
+            <span>D3 · B12 · MAGNESIUM · ZINC</span>
+            <strong>{formula.label}. One clean stack.</strong>
+            <p>Target base serving: {formula.serving} before a flavour shot.</p>
           </article>
         </div>
         <div className="ni-panel">
           <div className="ni-title">
             <div>
               <span>PROPOSED FORMULATION PANEL</span>
-              <h3>One daily base serving</h3>
+              <h3>{formula.label} formulation</h3>
             </div>
-            <p>Target base serving<br /><strong>39.5–40.5 g</strong></p>
+            <p>Target base serving<br /><strong>{formula.serving}</strong></p>
           </div>
           <div className="ni-table-wrap">
             <table className="ni-table">
@@ -251,12 +289,12 @@ export default function Home() {
           </div>
           <div className="ni-disclaimer">
             <span>READ THIS AS</span>
-            <p>A formulation target for prototype development. Energy, carbohydrate, sugars, fat, sodium, final %RDA and statutory panel values follow pilot analysis and regulatory classification.</p>
+            <p>A formulation target for prototype development. *Vitamin and mineral targets use the higher adult ICMR-NIN 2020 reference shown on the supplied Super Blend panel. Final %RDA, permitted forms, overages and label population require regulatory sign-off.</p>
           </div>
         </div>
         <div className="formula-note">
           <span>FORMULATION PRINCIPLE</span>
-          <p>Creatine lives in the base, never in the shot, so the full 3 g dose lands reliably every time.</p>
+          <p>{hasCreatine ? "Creatine lives in the Active Base, never in the shot, so the full 3 g dose lands reliably every time." : "The Core Base keeps the same protein, fibre and micronutrient promise without creatine for a broader everyday proposition."}</p>
         </div>
       </section>
 
@@ -267,7 +305,7 @@ export default function Home() {
         </div>
         <div className="decision-path" aria-label="Six products simplified into one base and one optional flavour shot">
           <div className="old-stack">
-            {['PRO', 'CRE', 'FIB', 'D3', 'B12', 'DHA'].map((label, index) => <div key={label} className={`mini-pack mini-pack-${index + 1}`}>{label}</div>)}
+            {['PRO', 'CRE', 'FIB', 'D3', 'B12', 'MIN'].map((label, index) => <div key={label} className={`mini-pack mini-pack-${index + 1}`}>{label}</div>)}
           </div>
           <div className="collapse-arrow"><span>COLLAPSE<br />THE STACK</span><i>→</i></div>
           <div className="new-stack">
@@ -372,7 +410,7 @@ export default function Home() {
           <article>
             <span>01 / FUNCTIONAL</span>
             <h3>Strong base</h3>
-            <p>25 g protein, 3 g creatine, fibre, DHA and focused micronutrients at visible doses.</p>
+            <p>25 g protein, optional 3 g creatine, fibre and four focused micronutrients at provisional 100% RDA targets.</p>
           </article>
           <article>
             <span>02 / BEHAVIOURAL</span>
@@ -418,9 +456,9 @@ export default function Home() {
         </div>
         <div className="guardrail-list">
           <div><span>01</span><p><b>Protein truth</b>Verify yeast protein with an amino-acid cross-check, not nitrogen alone.</p></div>
-          <div><span>02</span><p><b>Sensory truth</b>Protect Original first; screen all four shots in the real base.</p></div>
-          <div><span>03</span><p><b>Stability truth</b>Validate DHA oxidation, vitamin overages and end-of-life potency.</p></div>
-          <div><span>04</span><p><b>Claim truth</b>Confirm India-specific ingredient permissions and final label language.</p></div>
+          <div><span>02</span><p><b>RDA truth</b>Reconcile the adult reference, target population and final declared values before label lock.</p></div>
+          <div><span>03</span><p><b>Form truth</b>Confirm every supplier form, assay and India-specific regulatory route before pilot purchase.</p></div>
+          <div><span>04</span><p><b>Sensory truth</b>Prove that 440 mg elemental magnesium remains pleasant, dispersible and tolerable in Original.</p></div>
         </div>
       </section>
 
@@ -428,7 +466,7 @@ export default function Home() {
         <div className="footer-lockup"><span>VIROSH</span><strong>DAILY PLAY</strong></div>
         <p>Serious nutrition.<br />Zero serious-face required.</p>
         <div className="footer-meta"><span>CONCEPT DIRECTION</span><span>AUG 2026</span><span>ADULTS 18+</span></div>
-        <p className="footnote">*Zero added sugar is a development target, subject to final formulation, laboratory verification and applicable Indian regulations. This page is an NPD concept, not final consumer communication.</p>
+        <p className="footnote">*Zero added sugar and 100% RDA values are development targets, subject to final formulation, raw-material assay, target-population review, laboratory verification and applicable Indian regulations. This page is an NPD concept, not final consumer communication.</p>
       </footer>
     </main>
   );

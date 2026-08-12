@@ -104,6 +104,17 @@ a { color: inherit; text-decoration: none; }
 .section-heading { display: grid; grid-template-columns: .45fr 1.35fr .55fr; gap: 3vw; align-items: end; margin-bottom: 70px; }
 .section-heading h2 { font-size: clamp(56px, 6.5vw, 98px); margin: 0; }
 .section-heading > p:last-child { color: var(--muted); line-height: 1.5; font-size: 15px; margin: 0 0 6px; }
+.formula-selector { display: grid; grid-template-columns: .55fr 1.2fr; gap: 28px 5vw; align-items: end; margin: -20px 0 44px; padding: 24px; border: 1px solid var(--ink); background: #f3eee5; }
+.formula-selector > div:first-child > span { font-family: var(--font-mono), monospace; font-size: 9px; font-weight: 800; letter-spacing: .12em; }
+.formula-selector > div:first-child p { margin: 10px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.formula-selector-buttons { display: grid; grid-template-columns: repeat(2, 1fr); border: 1px solid var(--ink); }
+.formula-selector-buttons button { min-height: 82px; padding: 16px 18px; border: 0; border-right: 1px solid var(--ink); background: transparent; color: var(--ink); text-align: left; cursor: pointer; transition: background .2s ease, color .2s ease; }
+.formula-selector-buttons button:last-child { border-right: 0; }
+.formula-selector-buttons button:hover, .formula-selector-buttons button:focus-visible { background: rgba(17,26,50,.08); outline: 2px solid var(--ink); outline-offset: -3px; }
+.formula-selector-buttons button.active { background: var(--ink); color: white; }
+.formula-selector-buttons span { display: block; font-family: var(--font-mono), monospace; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; }
+.formula-selector-buttons b { display: block; margin-top: 6px; font-size: 17px; }
+.formula-selector-rationale { grid-column: 2; margin: -10px 0 0; font-size: 13px; line-height: 1.45; }
 .formula-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); }
 .formula-card { min-height: 310px; padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); position: relative; display: flex; flex-direction: column; }
 .formula-card:nth-child(4n) { border-right: 0; }
@@ -270,6 +281,8 @@ a { color: inherit; text-decoration: none; }
   .playground { min-height: 610px; }
   .playground-glow { width: min(72vw, 600px); }
   .belief-grid, .section-heading, .people-heading, .positioning-intro { grid-template-columns: 1fr 1fr; }
+  .formula-selector { grid-template-columns: 1fr; }
+  .formula-selector-rationale { grid-column: 1; }
   .belief h2 { grid-column: 1 / -1; }
   .tax-receipt { grid-column: 2; }
   .section-heading h2 { grid-column: 1 / -1; }
@@ -305,6 +318,9 @@ a { color: inherit; text-decoration: none; }
   .flavour-button { flex-direction: column; height: 66px; gap: 4px; font-size: 8px; }
   .belief, .formula, .people, .flavour-world, .positioning, .guardrails { padding-top: 75px; padding-bottom: 75px; }
   .belief-grid, .section-heading, .people-heading, .one-decision, .positioning-intro, .guardrails { grid-template-columns: 1fr; }
+  .formula-selector-buttons { grid-template-columns: 1fr; }
+  .formula-selector-buttons button { border-right: 0; border-bottom: 1px solid var(--ink); }
+  .formula-selector-buttons button:last-child { border-bottom: 0; }
   .belief h2, .section-heading h2, .people-heading h2, .section-heading > p:last-child, .tax-receipt { grid-column: 1; }
   .tax-receipt { max-width: 340px; }
   .formula-grid { grid-template-columns: 1fr 1fr; }
