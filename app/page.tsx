@@ -64,7 +64,7 @@ const essentials = [
   { dose: "25 g", name: "Yeast protein", role: "Daily protein foundation", mark: "P" },
   { dose: "3 g", name: "Creatine mono", role: "Practical performance support", mark: "C" },
   { dose: "4.5 g", name: "PHGG fibre", role: "Gentle daily fibre", mark: "F" },
-  { dose: "250 mg", name: "Algal DHA", role: "Plant-sourced omega-3", mark: "Ω" },
+  { dose: "200 mg", name: "Algal DHA", role: "Plant-sourced omega-3", mark: "Ω" },
   { dose: "600 IU", name: "Vitamin D3", role: "A critical daily essential", mark: "D" },
   { dose: "2.5 μg", name: "Vitamin B12", role: "Everyday micronutrient support", mark: "B" },
   { dose: "120 mg", name: "Magnesium", role: "Meaningful mineral dose", mark: "Mg" },
@@ -75,13 +75,13 @@ const formulationRows = [
   { group: "Core blend", item: "Yeast protein", amount: "25 g", form: "Verified protein contribution" },
   { group: "Core blend", item: "Creatine", amount: "3 g", form: "Creatine monohydrate" },
   { group: "Core blend", item: "Dietary fibre", amount: "4.5 g", form: "PHGG" },
-  { group: "Core blend", item: "Omega-3 DHA", amount: "250 mg", form: "Algal DHA" },
+  { group: "Core blend", item: "Omega-3 DHA", amount: "200 mg", form: "Algal DHA" },
   { group: "Vitamins", item: "Vitamin D3", amount: "15 μg / 600 IU", form: "Vitamin D3" },
   { group: "Vitamins", item: "Vitamin B12", amount: "2.5 μg", form: "Vitamin B12" },
   { group: "Vitamins", item: "Vitamin B6", amount: "1.9 mg", form: "Vitamin B6" },
   { group: "Minerals", item: "Magnesium", amount: "120 mg", form: "Elemental magnesium" },
   { group: "Minerals", item: "Zinc", amount: "8.5 mg", form: "Elemental zinc" },
-  { group: "Minerals", item: "Selenium", amount: "40 μg", form: "Total after native assay" },
+  { group: "Minerals", item: "Selenium", amount: "20 μg", form: "Total after native assay" },
 ];
 
 const shots = flavours.slice(1);
@@ -118,7 +118,7 @@ export default function Home() {
           <div className="eyebrow"><span>Daily essentials</span><i /> <span>Made playable</span></div>
           <h1>Same strong base.<br /><em>Pick your play.</em></h1>
           <p className="hero-lead">
-            A serious yeast-protein blend with creatine, fibre, omega-3 and critical vitamins & minerals—finished differently whenever the mood changes.
+            A serious yeast-protein blend with creatine, fibre, omega-3 and critical vitamins & minerals. Finish it differently whenever the mood changes.
           </p>
           <div className="hero-proof">
             <div><strong>25 g</strong><span>protein</span></div>
@@ -181,7 +181,7 @@ export default function Home() {
           <h2>Daily nutrition<br />without the<br /><span>supplement tax.</span></h2>
           <div className="belief-copy">
             <p className="large-copy">People do not need more discipline. They need a better-designed return path.</p>
-            <p>Virosh turns a crowded daily stack into one dependable base and makes repetition feel fresh through flavour—not through changing the nutrition.</p>
+            <p>Virosh turns a crowded daily stack into one dependable base and makes repetition feel fresh through flavour, without changing the nutrition.</p>
           </div>
           <div className="tax-receipt">
             <span className="receipt-label">THE OLD ROUTINE</span>
@@ -250,7 +250,7 @@ export default function Home() {
         </div>
         <div className="formula-note">
           <span>FORMULATION PRINCIPLE</span>
-          <p>Creatine lives in the base—never in the shot—so the full 3 g dose lands reliably every time.</p>
+          <p>Creatine lives in the base, never in the shot, so the full 3 g dose lands reliably every time.</p>
         </div>
       </section>
 
@@ -283,14 +283,14 @@ export default function Home() {
             <div className="persona-top"><span>R / 01</span><b>FEELING</b></div>
             <div className="portrait-disc"><span>RM</span><i>♥</i></div>
             <p className="persona-role">Rashmika brings the emotional invitation</p>
-            <h3>“I want this to feel like something I choose—not something I owe myself.”</h3>
+            <h3>A ritual that feels chosen, warm and easy to return to.</h3>
             <div className="persona-tags"><span>Warmth</span><span>Delight</span><span>Return</span></div>
           </article>
           <article className="persona persona-drive">
             <div className="persona-top"><span>V / 02</span><b>DOING</b></div>
             <div className="portrait-disc"><span>VD</span><i>↗</i></div>
             <p className="persona-role">Vijay brings the practical momentum</p>
-            <h3>“Give me the useful stuff in one move. Then let me get on with my day.”</h3>
+            <h3>Useful daily nutrition in one move, then on with the day.</h3>
             <div className="persona-tags"><span>Clarity</span><span>Drive</span><span>Proof</span></div>
           </article>
           <article className="persona-bridge">
@@ -300,7 +300,7 @@ export default function Home() {
           </article>
         </div>
         <div className="audience-strip">
-          <span>PRIMARY AUDIENCE</span><strong>Active adults 28–35</strong><p>For people balancing work, movement and real life—not elite-athlete theatre.</p>
+          <span>PRIMARY AUDIENCE</span><strong>Active adults 28 to 35</strong><p>For people balancing work, movement and real life, without elite-athlete theatre.</p>
         </div>
       </section>
 
@@ -339,12 +339,12 @@ export default function Home() {
         <p className="section-no">06 / THE POSITION</p>
         <div className="positioning-title">
           <h2>Not another<br />celebrity protein.</h2>
-          <p>A modern daily-nutrition system with celebrity energy around it—not celebrity dependence at its centre.</p>
+          <p>A modern daily-nutrition system with celebrity energy around it, without celebrity dependence at its centre.</p>
         </div>
         <div className="position-grid">
           <article><span>IT IS</span><h3>Useful</h3><p>Visible doses, practical ingredients, one clear daily behaviour.</p></article>
           <article><span>IT IS</span><h3>Playful</h3><p>Flavour changes the experience without moving the goalposts.</p></article>
-          <article><span>IT IS</span><h3>Human</h3><p>No fear, guilt, perfection or “fix yourself” wellness language.</p></article>
+          <article><span>IT IS</span><h3>Human</h3><p>No fear, guilt, perfection or fix-yourself wellness language.</p></article>
           <article className="not-card"><span>IT ISN’T</span><h3>Protein theatre</h3><p>No macho codes, medicalised clutter or empty mega-claims.</p></article>
         </div>
       </section>
@@ -355,7 +355,7 @@ export default function Home() {
           <h2>A bold concept.<br /><em>A disciplined next step.</em></h2>
         </div>
         <div className="guardrail-list">
-          <div><span>01</span><p><b>Protein truth</b>Verify yeast protein with amino-acid cross-check—not nitrogen alone.</p></div>
+          <div><span>01</span><p><b>Protein truth</b>Verify yeast protein with an amino-acid cross-check, not nitrogen alone.</p></div>
           <div><span>02</span><p><b>Sensory truth</b>Protect Original first; screen all four shots in the real base.</p></div>
           <div><span>03</span><p><b>Stability truth</b>Validate DHA oxidation, vitamin overages and end-of-life potency.</p></div>
           <div><span>04</span><p><b>Claim truth</b>Confirm India-specific ingredient permissions and final label language.</p></div>
@@ -366,7 +366,7 @@ export default function Home() {
         <div className="footer-lockup"><span>VIROSH</span><strong>DAILY PLAY</strong></div>
         <p>Serious nutrition.<br />Zero serious-face required.</p>
         <div className="footer-meta"><span>CONCEPT DIRECTION</span><span>AUG 2026</span><span>ADULTS 18+</span></div>
-        <p className="footnote">*Zero added sugar is a development target, subject to final formulation, laboratory verification and applicable Indian regulations. This page is an NPD concept—not final consumer communication.</p>
+        <p className="footnote">*Zero added sugar is a development target, subject to final formulation, laboratory verification and applicable Indian regulations. This page is an NPD concept, not final consumer communication.</p>
       </footer>
     </main>
   );

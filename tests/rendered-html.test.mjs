@@ -19,7 +19,7 @@ test("server-renders the Virosh product concept", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Virosh Daily Play — Product Concept<\/title>/i);
+  assert.match(html, /<title>Virosh Daily Play \| Product Concept<\/title>/i);
   assert.match(html, /Same strong base/);
   assert.match(html, /25 g/);
   assert.match(html, /Creatine mono/);
@@ -27,6 +27,10 @@ test("server-renders the Virosh product concept", async () => {
   assert.match(html, /THE SYSTEM AT A GLANCE/);
   assert.match(html, /PROPOSED FORMULATION PANEL/);
   assert.match(html, /Elemental magnesium/);
+  assert.match(html, /200 mg/);
+  assert.match(html, /Selenium/);
+  assert.match(html, /20 μg/);
   assert.match(html, /Not another/);
+  assert.doesNotMatch(html, /—|“|”/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });

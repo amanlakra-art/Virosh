@@ -21,7 +21,7 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Virosh Daily Play — Product Concept",
+  title: "Virosh Daily Play | Product Concept",
   description: "A yeast-protein daily essentials blend with optional flavour shots.",
   openGraph: {
     title: "Virosh Daily Play",
