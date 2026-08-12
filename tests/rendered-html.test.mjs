@@ -36,7 +36,8 @@ test("server-renders the Virosh product concept", async () => {
   assert.match(html, /17 mg elemental/);
   assert.match(html, /2.2 μg/);
   assert.match(html, /cholecalciferol/i);
-  assert.match(html, /cyanocobalamin/i);
+  assert.match(html, /methylcobalamin/i);
+  assert.match(html, /stabilized, light-protected standardized dry premix/i);
   assert.match(html, /Zinc bisglycinate/);
   assert.match(html, /chelated zinc/);
   assert.match(html, /Liposomal D3/);
