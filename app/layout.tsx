@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
-import { Barlow_Semi_Condensed, IBM_Plex_Mono, Manrope } from "next/font/google";
+import { Barlow_Condensed, Barlow_Semi_Condensed, IBM_Plex_Mono, Manrope } from "next/font/google";
 import "./globals.css";
+
+const impact = Barlow_Condensed({
+  variable: "--font-impact",
+  subsets: ["latin"],
+  weight: ["800", "900"],
+});
 
 const display = Barlow_Semi_Condensed({
   variable: "--font-display",
@@ -39,7 +45,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${display.variable} ${body.variable} ${mono.variable}`}>{children}</body>
+      <body className={`${impact.variable} ${display.variable} ${body.variable} ${mono.variable}`}>{children}</body>
     </html>
   );
 }
