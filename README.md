@@ -8,7 +8,8 @@ Interactive NPD concept page for a yeast protein and daily essentials blend with
 - 3 g creatine monohydrate in the base
 - 4.5 g PHGG fibre
 - 200 mg algal DHA
-- Targeted vitamins and minerals
+- Daily vitamin blend with D3, B1, B5, B6, B7, B9, B12, C and E
+- Targeted magnesium, zinc and selenium
 - Four flavour shots plus Original
 
 All formulation values are prototype targets. They are not a final statutory nutrition panel or consumer label.

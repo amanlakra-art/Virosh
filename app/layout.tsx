@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed, IBM_Plex_Mono, Manrope } from "next/font/google";
+import { Barlow_Semi_Condensed, IBM_Plex_Mono, Manrope } from "next/font/google";
 import "./globals.css";
 
-const display = Barlow_Condensed({
+const display = Barlow_Semi_Condensed({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["700", "800", "900"],

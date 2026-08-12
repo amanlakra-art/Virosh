@@ -30,6 +30,14 @@ test("server-renders the Virosh product concept", async () => {
   assert.match(html, /200 mg/);
   assert.match(html, /Selenium/);
   assert.match(html, /20 μg/);
+  assert.match(html, /Vitamin B1/);
+  assert.match(html, /Vitamin B5/);
+  assert.match(html, /Vitamin B7/);
+  assert.match(html, /Vitamin B9/);
+  assert.match(html, /Vitamin C/);
+  assert.match(html, /Vitamin E/);
+  assert.match(html, /300 μg/);
+  assert.match(html, /40 mg/);
   assert.match(html, /Not another/);
   assert.doesNotMatch(html, /—|“|”/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);

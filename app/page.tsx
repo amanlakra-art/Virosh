@@ -77,8 +77,14 @@ const formulationRows = [
   { group: "Core blend", item: "Dietary fibre", amount: "4.5 g", form: "PHGG" },
   { group: "Core blend", item: "Omega-3 DHA", amount: "200 mg", form: "Algal DHA" },
   { group: "Vitamins", item: "Vitamin D3", amount: "15 μg / 600 IU", form: "Vitamin D3" },
+  { group: "Vitamins", item: "Vitamin B1", amount: "1.4 mg", form: "Thiamine" },
+  { group: "Vitamins", item: "Vitamin B5", amount: "5 mg", form: "Pantothenic acid" },
+  { group: "Vitamins", item: "Vitamin B7", amount: "40 μg", form: "Biotin" },
+  { group: "Vitamins", item: "Vitamin B9", amount: "300 μg", form: "Folate" },
   { group: "Vitamins", item: "Vitamin B12", amount: "2.5 μg", form: "Vitamin B12" },
   { group: "Vitamins", item: "Vitamin B6", amount: "1.9 mg", form: "Vitamin B6" },
+  { group: "Vitamins", item: "Vitamin C", amount: "40 mg", form: "Ascorbic acid equivalent" },
+  { group: "Vitamins", item: "Vitamin E", amount: "5 mg", form: "Alpha-tocopherol equivalent" },
   { group: "Minerals", item: "Magnesium", amount: "120 mg", form: "Elemental magnesium" },
   { group: "Minerals", item: "Zinc", amount: "8.5 mg", form: "Elemental zinc" },
   { group: "Minerals", item: "Selenium", amount: "20 μg", form: "Total after native assay" },
@@ -210,7 +216,7 @@ export default function Home() {
             </article>
           ))}
           <article className="formula-card formula-card-end">
-            <span>+ B6 · selenium</span>
+            <span>+ B1 · B5 · B6 · B7 · B9 · C · E · selenium</span>
             <strong>One honest scoop.</strong>
             <p>Target base serving: 39.5–40.5 g before a flavour shot.</p>
           </article>
