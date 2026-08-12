@@ -80,6 +80,13 @@ a { color: inherit; text-decoration: none; }
 .flavour-button:hover, .flavour-button:focus-visible { background: rgba(255,255,255,.65); }
 .flavour-button.active { background: var(--ink); color: white; }
 
+.campaign-still { min-height: clamp(520px, 58vw, 850px); position: relative; background: #e9e2d8 url('/og.png') center center / cover no-repeat; display: flex; flex-direction: column; justify-content: space-between; padding: clamp(38px, 6vw, 88px) clamp(24px, 5vw, 76px) 28px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.still-copy { max-width: 520px; position: relative; z-index: 1; }
+.still-copy h2 { font-family: var(--font-display), sans-serif; text-transform: uppercase; font-size: clamp(62px, 7.8vw, 118px); line-height: .82; letter-spacing: -.07em; margin: 30px 0 28px; }
+.still-copy h2 span { color: var(--blue); }
+.still-copy > p:last-child { font-size: clamp(17px, 1.5vw, 23px); line-height: 1.4; font-weight: 700; letter-spacing: -.025em; }
+.still-caption { display: flex; justify-content: space-between; border-top: 1px solid rgba(17,26,50,.45); padding-top: 13px; font-family: var(--font-mono), monospace; font-size: 9px; letter-spacing: .1em; }
+
 .section-no { font-family: var(--font-mono), monospace; font-weight: 800; font-size: 10px; letter-spacing: .13em; margin: 0; text-transform: uppercase; }
 .belief { background: var(--ink); color: #f5f7f2; padding-top: 90px; padding-bottom: 105px; }
 .belief-grid { display: grid; grid-template-columns: 1.1fr .65fr .62fr; gap: 6vw; align-items: end; margin-top: 54px; }
@@ -111,6 +118,28 @@ a { color: inherit; text-decoration: none; }
 .formula-card-end > span { font-family: var(--font-mono), monospace; font-size: 10px; letter-spacing: .1em; }
 .formula-card-end > strong { font-size: clamp(30px, 4vw, 60px); }
 .formula-card-end p { margin-left: auto; color: inherit; max-width: 260px; font-size: 13px; }
+.ni-panel { margin-top: 72px; border: 2px solid var(--ink); background: #fbfbf7; box-shadow: 14px 14px 0 var(--accent-soft); transition: box-shadow .4s ease; }
+.ni-title { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; padding: 32px; border-bottom: 8px solid var(--ink); }
+.ni-title span { font-family: var(--font-mono), monospace; font-size: 9px; font-weight: 800; letter-spacing: .13em; }
+.ni-title h3 { font-family: var(--font-display), sans-serif; text-transform: uppercase; font-size: clamp(39px, 4.5vw, 68px); line-height: .9; letter-spacing: -.055em; margin: 11px 0 0; }
+.ni-title p { text-align: right; font-family: var(--font-mono), monospace; font-size: 9px; line-height: 1.6; margin: 0; text-transform: uppercase; }
+.ni-title p strong { font-family: var(--font-display), sans-serif; font-size: 25px; }
+.ni-table-wrap { overflow-x: auto; }
+.ni-table { width: 100%; border-collapse: collapse; min-width: 670px; }
+.ni-table thead th { background: var(--ink); color: white; padding: 13px 22px; text-align: left; font-family: var(--font-mono), monospace; font-size: 9px; letter-spacing: .11em; text-transform: uppercase; }
+.ni-table thead th:nth-child(2) { text-align: right; }
+.ni-table tbody tr { border-bottom: 1px solid var(--ink); }
+.ni-table tbody tr:last-child { border-bottom: 0; }
+.ni-table tbody th { display: grid; grid-template-columns: 38px minmax(150px, .9fr) minmax(100px, .5fr); align-items: center; padding: 16px 22px; text-align: left; }
+.ni-table tbody th span, .ni-table tbody th i { font-family: var(--font-mono), monospace; font-size: 8px; font-style: normal; letter-spacing: .08em; text-transform: uppercase; }
+.ni-table tbody th i { color: var(--muted); }
+.ni-table tbody th b { font-size: 14px; }
+.ni-table tbody td { padding: 16px 22px; font-size: 12px; }
+.ni-table tbody td:nth-child(2) { text-align: right; font-family: var(--font-display), sans-serif; font-weight: 900; font-size: 23px; white-space: nowrap; }
+.ni-table tbody td:last-child { color: var(--muted); }
+.ni-disclaimer { display: grid; grid-template-columns: .35fr 1fr; gap: 40px; padding: 24px 32px; background: var(--accent); color: var(--accent-ink); transition: background .4s ease; }
+.ni-disclaimer span { font-family: var(--font-mono), monospace; font-size: 9px; font-weight: 800; letter-spacing: .1em; }
+.ni-disclaimer p { margin: 0; font-size: 11px; line-height: 1.55; max-width: 800px; }
 .formula-note { display: grid; grid-template-columns: 1fr 2fr; gap: 5vw; border-bottom: 1px solid var(--line); padding: 32px 0; }
 .formula-note span { font-family: var(--font-mono), monospace; font-size: 9px; font-weight: 800; letter-spacing: .1em; }
 .formula-note p { font-size: 21px; font-weight: 700; margin: 0; max-width: 760px; }
@@ -256,6 +285,13 @@ a { color: inherit; text-decoration: none; }
   .formula-card-end { flex-direction: column; align-items: flex-start; gap: 12px; }
   .formula-card-end p { margin: 0; }
   .formula-note { grid-template-columns: 1fr; }
+  .campaign-still { background-position: 56% center; }
+  .still-copy { max-width: 290px; }
+  .still-copy > p:last-child { font-size: 14px; max-width: 250px; }
+  .ni-panel { margin-top: 48px; box-shadow: 8px 8px 0 var(--accent-soft); }
+  .ni-title { align-items: flex-start; padding: 23px 20px; flex-direction: column; }
+  .ni-title p { text-align: left; }
+  .ni-disclaimer { grid-template-columns: 1fr; gap: 9px; padding: 22px 20px; }
   .decision-path { grid-template-columns: 1fr; margin-top: 30px; }
   .collapse-arrow i { transform: rotate(90deg); }.decision-caption { grid-column: 1; }
   .people-grid { grid-template-columns: 1fr; }.persona { min-height: 560px; }.persona-drive { border-left: 1px solid var(--ink); border-top: 0; }

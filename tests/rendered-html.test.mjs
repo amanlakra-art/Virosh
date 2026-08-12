@@ -24,6 +24,9 @@ test("server-renders the Virosh product concept", async () => {
   assert.match(html, /25 g/);
   assert.match(html, /Creatine mono/);
   assert.match(html, /Dark Chocolate Sea Salt/);
+  assert.match(html, /THE SYSTEM AT A GLANCE/);
+  assert.match(html, /PROPOSED FORMULATION PANEL/);
+  assert.match(html, /Elemental magnesium/);
   assert.match(html, /Not another/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });

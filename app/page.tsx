@@ -71,6 +71,19 @@ const essentials = [
   { dose: "8.5 mg", name: "Zinc", role: "Daily mineral support", mark: "Zn" },
 ];
 
+const formulationRows = [
+  { group: "Core blend", item: "Yeast protein", amount: "25 g", form: "Verified protein contribution" },
+  { group: "Core blend", item: "Creatine", amount: "3 g", form: "Creatine monohydrate" },
+  { group: "Core blend", item: "Dietary fibre", amount: "4.5 g", form: "PHGG" },
+  { group: "Core blend", item: "Omega-3 DHA", amount: "250 mg", form: "Algal DHA" },
+  { group: "Vitamins", item: "Vitamin D3", amount: "15 μg / 600 IU", form: "Vitamin D3" },
+  { group: "Vitamins", item: "Vitamin B12", amount: "2.5 μg", form: "Vitamin B12" },
+  { group: "Vitamins", item: "Vitamin B6", amount: "1.9 mg", form: "Vitamin B6" },
+  { group: "Minerals", item: "Magnesium", amount: "120 mg", form: "Elemental magnesium" },
+  { group: "Minerals", item: "Zinc", amount: "8.5 mg", form: "Elemental zinc" },
+  { group: "Minerals", item: "Selenium", amount: "40 μg", form: "Total after native assay" },
+];
+
 const shots = flavours.slice(1);
 
 export default function Home() {
@@ -153,6 +166,15 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="campaign-still" aria-label="Virosh Daily Play pack and four flavour shots">
+        <div className="still-copy">
+          <p className="section-no">THE SYSTEM AT A GLANCE</p>
+          <h2>One base.<br /><span>Four moods.</span></h2>
+          <p>Chocolate. Coffee. Mango. Kulfi.<br />The nutrition stays put. The day gets a choice.</p>
+        </div>
+        <div className="still-caption"><span>CONCEPT PACK VISUAL</span><b>BASE + OPTIONAL SHOTS</b></div>
+      </section>
+
       <section className="belief section-pad">
         <p className="section-no">01 / THE OPPORTUNITY</p>
         <div className="belief-grid">
@@ -192,6 +214,39 @@ export default function Home() {
             <strong>One honest scoop.</strong>
             <p>Target base serving: 39.5–40.5 g before a flavour shot.</p>
           </article>
+        </div>
+        <div className="ni-panel">
+          <div className="ni-title">
+            <div>
+              <span>PROPOSED FORMULATION PANEL</span>
+              <h3>One daily base serving</h3>
+            </div>
+            <p>Target base serving<br /><strong>39.5–40.5 g</strong></p>
+          </div>
+          <div className="ni-table-wrap">
+            <table className="ni-table">
+              <thead>
+                <tr>
+                  <th scope="col">Component</th>
+                  <th scope="col">Target per serving</th>
+                  <th scope="col">Form / basis</th>
+                </tr>
+              </thead>
+              <tbody>
+                {formulationRows.map((row, index) => (
+                  <tr key={row.item}>
+                    <th scope="row"><span>{String(index + 1).padStart(2, "0")}</span><b>{row.item}</b><i>{row.group}</i></th>
+                    <td>{row.amount}</td>
+                    <td>{row.form}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="ni-disclaimer">
+            <span>READ THIS AS</span>
+            <p>A formulation target for prototype development. Energy, carbohydrate, sugars, fat, sodium, final %RDA and statutory panel values follow pilot analysis and regulatory classification.</p>
+          </div>
         </div>
         <div className="formula-note">
           <span>FORMULATION PRINCIPLE</span>
