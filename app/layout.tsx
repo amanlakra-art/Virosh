@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed, IBM_Plex_Mono, Manrope } from "next/font/google";
+import { IBM_Plex_Mono, Manrope, Syne } from "next/font/google";
 import "./globals.css";
 
-const display = Barlow_Condensed({
+const display = Syne({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["700", "800", "900"],
+  weight: ["600", "700", "800"],
 });
 
 const body = Manrope({

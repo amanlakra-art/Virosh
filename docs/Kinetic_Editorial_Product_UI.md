@@ -16,13 +16,14 @@ The page earns trust through clear hierarchy, visible numbers, strong table desi
 
 | Role | Typeface | Use |
 |---|---|---|
-| Display | Barlow Condensed, 700 to 800 | Headlines, product names, large numbers |
+| Display | Syne, 600 to 800 | Headlines, product names and expressive brand moments |
 | Body | Manrope, 400 to 800 | Explanations, narrative copy, labels |
 | Utility | IBM Plex Mono, 400 to 600 | Section numbers, metadata, proof points |
 
 Rules:
 
 - Display headlines are uppercase with controlled tracking around `-0.025em` and line height around `0.94` to `0.98`. Avoid ultra-tight spacing that closes counters or makes adjacent letters touch.
+- Dense technical quantities use Manrope at 800 rather than the display face, so values remain easy to compare at a glance.
 - Body text stays compact and conversational.
 - Mono labels make the page feel like a considered system, not decoration.
 - Avoid quotation styling unless the words are a verified quotation with a source.
