@@ -65,19 +65,19 @@ const flavours: Flavour[] = [
 const commonEssentials = [
   { dose: "25 g", name: "Yeast protein", role: "Supplier-verified protein concentrate", mark: "P" },
   { dose: "4.5 g", name: "PHGG fibre", role: "Partially hydrolysed guar gum", mark: "F" },
-  { dose: "600 IU", name: "Vitamin D3", role: "Microencapsulated cholecalciferol", mark: "D" },
+  { dose: "600 IU", name: "Vitamin D3", role: "Microencapsulated D3 (Liposomal D3)", mark: "D" },
   { dose: "2.2 μg", name: "Vitamin B12", role: "Cyanocobalamin dry premix", mark: "B" },
   { dose: "440 mg", name: "Magnesium", role: "Non-buffered bisglycinate chelate", mark: "Mg" },
-  { dose: "17 mg", name: "Zinc", role: "Zinc citrate", mark: "Zn" },
+  { dose: "17 mg", name: "Zinc", role: "Zinc bisglycinate chelate", mark: "Zn" },
 ];
 
 const commonFormulationRows = [
   { group: "Core blend", item: "Yeast protein", amount: "25 g", form: "Supplier-verified concentrate; amino-acid profile and digestibility to qualify" },
   { group: "Core blend", item: "Dietary fibre", amount: "4.5 g", form: "Partially hydrolysed guar gum (PHGG)" },
-  { group: "Vitamins", item: "Vitamin D3", amount: "15 μg / 600 IU", form: "Microencapsulated cholecalciferol dry premix with lipid carrier" },
+  { group: "Vitamins", item: "Vitamin D3", amount: "15 μg / 600 IU", form: "Microencapsulated cholecalciferol D3 with lipid carrier (Liposomal D3)" },
   { group: "Vitamins", item: "Vitamin B12", amount: "2.2 μg", form: "Cyanocobalamin in a standardized dry premix" },
   { group: "Minerals", item: "Magnesium", amount: "440 mg elemental", form: "Fully reacted, non-buffered magnesium bisglycinate chelate" },
-  { group: "Minerals", item: "Zinc", amount: "17 mg elemental", form: "Zinc citrate" },
+  { group: "Minerals", item: "Zinc", amount: "17 mg elemental", form: "Zinc bisglycinate (chelated zinc)" },
 ];
 
 const formulaVariants = {
@@ -289,7 +289,7 @@ export default function Home() {
           </div>
           <div className="ni-disclaimer">
             <span>FORM QUALITY</span>
-            <p>Preferred high-availability development forms are named explicitly. They still require supplier qualification, exact chemical identity, assay, stability, sensory testing and confirmation of the applicable Indian regulatory route. *Targets use the higher adult ICMR-NIN 2020 reference; final %RDA and label population require regulatory sign-off.</p>
+            <p>Preferred high-availability development forms are named explicitly. "Liposomal D3" is a working descriptor and must be supported by the selected supplier's actual liposomal delivery technology. All forms still require supplier qualification, exact chemical identity, assay, stability, sensory testing and confirmation of the applicable Indian regulatory route. *Targets use the higher adult ICMR-NIN 2020 reference; final %RDA and label population require regulatory sign-off.</p>
           </div>
         </div>
         <div className="formula-note">
