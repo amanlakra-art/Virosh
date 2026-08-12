@@ -341,17 +341,73 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="positioning section-pad">
-        <p className="section-no">06 / THE POSITION</p>
-        <div className="positioning-title">
-          <h2>Not another<br />celebrity protein.</h2>
-          <p>A modern daily-nutrition system with celebrity energy around it, without celebrity dependence at its centre.</p>
+      <section className="positioning section-pad" id="positioning">
+        <div className="positioning-intro">
+          <div>
+            <p className="section-no">06 / THE POSITIONING SYSTEM</p>
+            <span className="position-status">WORKING DIRECTION</span>
+          </div>
+          <div className="positioning-lockup">
+            <span>THE TERRITORY</span>
+            <h2>Playable daily<br /><em>nutrition.</em></h2>
+          </div>
+          <p className="positioning-summary">Serious daily performance nutrition, made easier to return to through flavour choice.</p>
         </div>
-        <div className="position-grid">
-          <article><span>IT IS</span><h3>Useful</h3><p>Visible doses, practical ingredients, one clear daily behaviour.</p></article>
-          <article><span>IT IS</span><h3>Playful</h3><p>Flavour changes the experience without moving the goalposts.</p></article>
-          <article><span>IT IS</span><h3>Human</h3><p>No fear, guilt, perfection or fix-yourself wellness language.</p></article>
-          <article className="not-card"><span>IT ISN’T</span><h3>Protein theatre</h3><p>No macho codes, medicalised clutter or empty mega-claims.</p></article>
+
+        <div className="position-statement" aria-label="Proposed positioning statement">
+          <div><span>FOR</span><p>Active adults 28 to 35 balancing work, movement and real life.</p></div>
+          <div><span>VIROSH IS</span><p>A yeast-protein daily essentials system with one dependable base and optional flavour shots.</p></div>
+          <div><span>THAT DELIVERS</span><p>Useful performance nutrition without the friction of managing a multi-product stack.</p></div>
+          <div><span>UNLIKE</span><p>Celebrity proteins built around hype, fixed flavours or bodybuilding theatre.</p></div>
+          <div><span>BECAUSE</span><p>The nutrition stays consistent while the experience can change with the day.</p></div>
+        </div>
+
+        <div className="position-promise">
+          <span>THE CONSUMER PROMISE</span>
+          <h3>Same strong base.<br /><em>Pick your play.</em></h3>
+          <p>Daily strength made easier to return to.</p>
+        </div>
+
+        <div className="position-pillars">
+          <article>
+            <span>01 / FUNCTIONAL</span>
+            <h3>Strong base</h3>
+            <p>25 g protein, 3 g creatine, fibre, DHA and focused micronutrients at visible doses.</p>
+          </article>
+          <article>
+            <span>02 / BEHAVIOURAL</span>
+            <h3>Easy return</h3>
+            <p>One repeatable daily action that reduces stack friction and welcomes restarting.</p>
+          </article>
+          <article>
+            <span>03 / EMOTIONAL</span>
+            <h3>Personal play</h3>
+            <p>Original plus four flavour shots make the ritual feel chosen without changing the promise.</p>
+          </article>
+        </div>
+
+        <div className="position-frame">
+          <div className="position-frame-title">
+            <span>COMPETITIVE FRAME</span>
+            <p>Virosh sits between functional credibility and enjoyable repeat use.</p>
+          </div>
+          <div className="frame-grid">
+            <article><span>FIXED-FLAVOUR PROTEIN</span><strong>Performance</strong><p>Useful, but repetitive and usually coded around training.</p></article>
+            <article><span>MULTIVITAMIN</span><strong>Daily habit</strong><p>Convenient, but separated from protein and the sensory ritual.</p></article>
+            <article><span>FLAVOUR NOVELTY</span><strong>Fun</strong><p>Engaging, but often without a strong nutritional foundation.</p></article>
+            <article className="frame-virosh"><span>VIROSH</span><strong>Useful + playable</strong><p>A serious base with choice built into the return path.</p></article>
+          </div>
+        </div>
+
+        <div className="partner-roles">
+          <article><span>VIJAY</span><strong>Practical momentum</strong><p>Clarity, drive and proof.</p></article>
+          <article><span>RASHMIKA</span><strong>Emotional invitation</strong><p>Warmth, delight and return.</p></article>
+          <article><span>VIROSH</span><strong>The shared territory</strong><p>Wellness that works hard without acting serious.</p></article>
+        </div>
+
+        <div className="position-boundary">
+          <span>WHAT IT REFUSES</span>
+          <p>No macho codes, medicalised clutter, guilt, perfection language or empty mega-claims.</p>
         </div>
       </section>
 
