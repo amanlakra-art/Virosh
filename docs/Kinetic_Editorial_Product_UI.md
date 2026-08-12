@@ -16,7 +16,7 @@ The page earns trust through clear hierarchy, visible numbers, strong table desi
 
 | Role | Typeface | Use |
 |---|---|---|
-| Display | Syne, 600 to 800 | Headlines, product names and expressive brand moments |
+| Display | Barlow Semi Condensed, 700 to 800 | Headlines, product names and expressive brand moments |
 | Body | Manrope, 400 to 800 | Explanations, narrative copy, labels |
 | Utility | IBM Plex Mono, 400 to 600 | Section numbers, metadata, proof points |
 
