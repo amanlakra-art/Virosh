@@ -31,10 +31,13 @@ test("server-renders the Virosh product concept", async () => {
   assert.match(html, /Core Base/);
   assert.match(html, /Without creatine/);
   assert.match(html, /440 mg elemental/);
-  assert.match(html, /Magnesium bisglycinate/);
+  assert.match(html, /magnesium bisglycinate/i);
+  assert.match(html, /non-buffered/i);
   assert.match(html, /17 mg elemental/);
   assert.match(html, /2.2 μg/);
-  assert.match(html, /Cholecalciferol/);
+  assert.match(html, /cholecalciferol/i);
+  assert.match(html, /cyanocobalamin/i);
+  assert.match(html, /zinc citrate/i);
   assert.doesNotMatch(html, /Algal DHA|Selenium|Vitamin B1\b|Vitamin B5\b|Vitamin B6\b|Vitamin B7\b|Vitamin B9\b|Vitamin C\b|Vitamin E\b/);
   assert.match(html, /Playable daily/);
   assert.match(html, /WORKING DIRECTION/);

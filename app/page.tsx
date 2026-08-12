@@ -63,21 +63,21 @@ const flavours: Flavour[] = [
 ];
 
 const commonEssentials = [
-  { dose: "25 g", name: "Yeast protein", role: "Daily protein foundation", mark: "P" },
-  { dose: "4.5 g", name: "PHGG fibre", role: "Gentle daily fibre", mark: "F" },
-  { dose: "600 IU", name: "Vitamin D3", role: "100% adult RDA target*", mark: "D" },
-  { dose: "2.2 μg", name: "Vitamin B12", role: "100% adult RDA target*", mark: "B" },
-  { dose: "440 mg", name: "Magnesium", role: "100% adult RDA target*", mark: "Mg" },
-  { dose: "17 mg", name: "Zinc", role: "100% adult RDA target*", mark: "Zn" },
+  { dose: "25 g", name: "Yeast protein", role: "Supplier-verified protein concentrate", mark: "P" },
+  { dose: "4.5 g", name: "PHGG fibre", role: "Partially hydrolysed guar gum", mark: "F" },
+  { dose: "600 IU", name: "Vitamin D3", role: "Microencapsulated cholecalciferol", mark: "D" },
+  { dose: "2.2 μg", name: "Vitamin B12", role: "Cyanocobalamin dry premix", mark: "B" },
+  { dose: "440 mg", name: "Magnesium", role: "Non-buffered bisglycinate chelate", mark: "Mg" },
+  { dose: "17 mg", name: "Zinc", role: "Zinc citrate", mark: "Zn" },
 ];
 
 const commonFormulationRows = [
-  { group: "Core blend", item: "Yeast protein", amount: "25 g", form: "Verified protein contribution" },
-  { group: "Core blend", item: "Dietary fibre", amount: "4.5 g", form: "PHGG" },
-  { group: "Vitamins", item: "Vitamin D3", amount: "15 μg / 600 IU", form: "Cholecalciferol in a stable dry premix" },
-  { group: "Vitamins", item: "Vitamin B12", amount: "2.2 μg", form: "Cyanocobalamin or hydroxocobalamin premix" },
-  { group: "Minerals", item: "Magnesium", amount: "440 mg elemental", form: "Magnesium bisglycinate / glycinate; assay to confirm" },
-  { group: "Minerals", item: "Zinc", amount: "17 mg elemental", form: "Permitted high-availability source; citrate provisional" },
+  { group: "Core blend", item: "Yeast protein", amount: "25 g", form: "Supplier-verified concentrate; amino-acid profile and digestibility to qualify" },
+  { group: "Core blend", item: "Dietary fibre", amount: "4.5 g", form: "Partially hydrolysed guar gum (PHGG)" },
+  { group: "Vitamins", item: "Vitamin D3", amount: "15 μg / 600 IU", form: "Microencapsulated cholecalciferol dry premix with lipid carrier" },
+  { group: "Vitamins", item: "Vitamin B12", amount: "2.2 μg", form: "Cyanocobalamin in a standardized dry premix" },
+  { group: "Minerals", item: "Magnesium", amount: "440 mg elemental", form: "Fully reacted, non-buffered magnesium bisglycinate chelate" },
+  { group: "Minerals", item: "Zinc", amount: "17 mg elemental", form: "Zinc citrate" },
 ];
 
 const formulaVariants = {
@@ -108,7 +108,7 @@ export default function Home() {
   const formula = formulaVariants[formulaMode];
   const hasCreatine = formulaMode === "with-creatine";
   const essentials = hasCreatine
-    ? [commonEssentials[0], { dose: "3 g", name: "Creatine mono", role: "Practical performance support", mark: "C" }, ...commonEssentials.slice(1)]
+    ? [commonEssentials[0], { dose: "3 g", name: "Creatine mono", role: "Micronized creatine monohydrate", mark: "C" }, ...commonEssentials.slice(1)]
     : commonEssentials;
   const formulationRows = hasCreatine
     ? [commonFormulationRows[0], { group: "Core blend", item: "Creatine", amount: "3 g", form: "Micronized creatine monohydrate" }, ...commonFormulationRows.slice(1)]
@@ -288,8 +288,8 @@ export default function Home() {
             </table>
           </div>
           <div className="ni-disclaimer">
-            <span>READ THIS AS</span>
-            <p>A formulation target for prototype development. *Vitamin and mineral targets use the higher adult ICMR-NIN 2020 reference shown on the supplied Super Blend panel. Final %RDA, permitted forms, overages and label population require regulatory sign-off.</p>
+            <span>FORM QUALITY</span>
+            <p>Preferred high-availability development forms are named explicitly. They still require supplier qualification, exact chemical identity, assay, stability, sensory testing and confirmation of the applicable Indian regulatory route. *Targets use the higher adult ICMR-NIN 2020 reference; final %RDA and label population require regulatory sign-off.</p>
           </div>
         </div>
         <div className="formula-note">
