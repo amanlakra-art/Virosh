@@ -38,6 +38,14 @@ test("server-renders the Virosh product concept", async () => {
   assert.match(html, /cholecalciferol/i);
   assert.match(html, /methylcobalamin/i);
   assert.match(html, /stabilized, light-protected standardized dry premix/i);
+  assert.match(html, /FOUNDATION STACK/i);
+  assert.match(html, /UNFLAVOURED BLEND/i);
+  assert.match(html, /WHAT WE LEFT OUT, ON PURPOSE/i);
+  assert.match(html, /No report\. No release\./i);
+  assert.match(html, /10-in-1 blend/i);
+  assert.match(html, /finished-goods batch before release/i);
+  assert.match(html, /Iron/);
+  assert.match(html, /Omega-3 \/ DHA/);
   assert.match(html, /Zinc bisglycinate/);
   assert.match(html, /chelated zinc/);
   assert.match(html, /Liposomal D3/);

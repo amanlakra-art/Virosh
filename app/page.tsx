@@ -101,6 +101,17 @@ const formulaVariants = {
 
 const shots = flavours.slice(1);
 
+const exclusions = [
+  { name: "Iron", reason: "Needs differ sharply by sex and life stage; not a universal daily dose." },
+  { name: "Omega-3 / DHA", reason: "Oxidation can create rancid or fishy notes across the whole base." },
+  { name: "Calcium", reason: "A meaningful dose is bulky and chalky; better suited to age-specific nutrition." },
+  { name: "Electrolytes", reason: "Occasion-led, not universal; an effective dose would make the base salty." },
+  { name: "Greens", reason: "Undefined without substantial dosing; adds vegetal taste and variability." },
+  { name: "Collagen", reason: "Animal-derived and incomplete; it dilutes the yeast-protein proposition." },
+  { name: "Broad multivitamin", reason: "Token-dose label length does not create clarity or adherence." },
+  { name: "Whey", reason: "Replaced by yeast protein to preserve a genuinely differentiated base." },
+];
+
 export default function Home() {
   const [activeId, setActiveId] = useState("mango");
   const [formulaMode, setFormulaMode] = useState<FormulaMode>("with-creatine");
@@ -263,7 +274,7 @@ export default function Home() {
           <div className="ni-title">
             <div>
               <span>PROPOSED FORMULATION PANEL</span>
-              <h3>{formula.label} formulation</h3>
+              <h3>Foundation stack<br /><em>Unflavoured blend</em></h3>
             </div>
             <p>Target base serving<br /><strong>{formula.serving}</strong></p>
           </div>
@@ -298,9 +309,56 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="principles section-pad" id="principles">
+        <div className="principles-heading">
+          <div>
+            <p className="section-no">03 / THE FORMULATION CODE</p>
+            <h2>What we do.<br /><em>What we don&apos;t.</em></h2>
+          </div>
+          <p>The personas gave us the problem, not an ingredient checklist. Every addition must earn its place through relevance, dosage, sensory fit and daily simplicity.</p>
+        </div>
+
+        <div className="principle-split">
+          <article className="principle-do">
+            <span>WHAT WE DO</span>
+            <ul>
+              <li>Use a focused stack at visible, meaningful targets.</li>
+              <li>Test every finished-goods batch before release.</li>
+              <li>Publish batch results for protein, fibre, magnesium, D3, B12 and creatine when present.</li>
+            </ul>
+          </article>
+          <article className="principle-dont">
+            <span>WHAT WE DON&apos;T</span>
+            <ul>
+              <li>Add omega-3 simply to make the product easier to sell.</li>
+              <li>Add token ingredients just to claim a 10-in-1 blend.</li>
+              <li>Ship finished goods without the test report.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div className="exclusions-intro">
+          <span>WHAT WE LEFT OUT, ON PURPOSE</span>
+          <p>A cleaner stack is not a compromise. It is the product discipline.</p>
+        </div>
+        <div className="exclusion-grid">
+          {exclusions.map((item, index) => (
+            <article key={item.name}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{item.name}</h3>
+              <p>{item.reason}</p>
+            </article>
+          ))}
+        </div>
+        <div className="release-promise">
+          <strong>No report. No release.</strong>
+          <p>Every finished batch is tested before release. The named batch results are made public.</p>
+        </div>
+      </section>
+
       <section className="one-decision section-pad">
         <div className="decision-left">
-          <p className="section-no">03 / THE BEHAVIOUR SHIFT</p>
+          <p className="section-no">04 / THE BEHAVIOUR SHIFT</p>
           <h2>One decision.<br /><span>Not six.</span></h2>
         </div>
         <div className="decision-path" aria-label="Six products simplified into one base and one optional flavour shot">
@@ -319,7 +377,7 @@ export default function Home() {
 
       <section className="people section-pad" id="people">
         <div className="section-heading people-heading">
-          <p className="section-no">04 / THE PEOPLE</p>
+          <p className="section-no">05 / THE PEOPLE</p>
           <h2>Head meets heart.<br /><em>Both keep moving.</em></h2>
         </div>
         <div className="people-grid">
@@ -350,7 +408,7 @@ export default function Home() {
 
       <section className="flavour-world section-pad" id="flavours">
         <div className="section-heading flavour-heading">
-          <p className="section-no">05 / THE PLAY SYSTEM</p>
+          <p className="section-no">06 / THE PLAY SYSTEM</p>
           <h2>Four ways to<br />change the <em>feeling.</em></h2>
           <p>The shots carry flavour only. The nutritional promise stays in the base.</p>
         </div>
@@ -382,7 +440,7 @@ export default function Home() {
       <section className="positioning section-pad" id="positioning">
         <div className="positioning-intro">
           <div>
-            <p className="section-no">06 / THE POSITIONING SYSTEM</p>
+            <p className="section-no">07 / THE POSITIONING SYSTEM</p>
             <span className="position-status">WORKING DIRECTION</span>
           </div>
           <div className="positioning-lockup">
@@ -451,7 +509,7 @@ export default function Home() {
 
       <section className="guardrails section-pad">
         <div>
-          <p className="section-no">07 / READY FOR DEVELOPMENT</p>
+          <p className="section-no">08 / READY FOR DEVELOPMENT</p>
           <h2>A bold concept.<br /><em>A disciplined next step.</em></h2>
         </div>
         <div className="guardrail-list">
