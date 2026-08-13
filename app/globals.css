@@ -154,7 +154,7 @@ a { color: inherit; text-decoration: none; }
 .formula-note span { font-family: var(--font-mono), monospace; font-size: 9px; font-weight: 800; letter-spacing: .1em; }
 .formula-note p { font-size: 21px; font-weight: 700; margin: 0; max-width: 760px; }
 
-.principles { background: var(--ink); color: white; padding-top: 105px; padding-bottom: 72px; }
+.principles { background: var(--ink); color: white; padding-top: 105px; padding-bottom: 44px; }
 .principles-heading { display: grid; grid-template-columns: 1.25fr .55fr; gap: 7vw; align-items: end; }
 .principles-heading h2 { font-family: var(--font-impact), sans-serif; text-transform: uppercase; font-size: clamp(58px, 7vw, 104px); line-height: .91; letter-spacing: -.025em; margin: 22px 0 0; }
 .principles-heading h2 em { color: var(--green); font-style: normal; }
@@ -167,16 +167,16 @@ a { color: inherit; text-decoration: none; }
 .principle-split ul { list-style: none; padding: 0; margin: 72px 0 0; display: grid; gap: 17px; }
 .principle-split li { position: relative; padding-left: 20px; font-size: 20px; line-height: 1.25; font-weight: 800; }
 .principle-split li::before { content: "●"; position: absolute; left: 0; top: 2px; color: var(--coral); font-size: 10px; }
-.exclusions-intro { display: grid; grid-template-columns: .4fr 1fr; gap: 4vw; align-items: end; margin-top: 58px; }
+.exclusions-intro { display: grid; grid-template-columns: .4fr 1fr; gap: 4vw; align-items: end; margin-top: 46px; }
 .exclusions-intro p { margin: 0; color: #b9bfce; font-size: 18px; }
 .exclusion-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 24px; }
-.exclusion-grid article { min-height: 205px; padding: 24px; border: 1px solid rgba(255,255,255,.28); border-right: 0; display: flex; flex-direction: column; }
+.exclusion-grid article { min-height: 174px; padding: 22px 24px; border: 1px solid rgba(255,255,255,.28); border-right: 0; display: flex; flex-direction: column; }
 .exclusion-grid article:nth-child(4n) { border-right: 1px solid rgba(255,255,255,.28); }
 .exclusion-grid article:nth-child(n+5) { border-top: 0; }
-.exclusion-grid article > span { font-family: var(--font-impact), sans-serif; color: var(--green); font-size: 38px; font-weight: 800; line-height: .85; letter-spacing: -.025em; }
-.exclusion-grid h3 { font-family: var(--font-display), sans-serif; font-size: 26px; line-height: 1; text-transform: uppercase; margin: auto 0 12px; }
-.exclusion-grid p { color: #b9bfce; font-size: 12px; line-height: 1.5; margin: 0; }
-.release-promise { display: grid; grid-template-columns: .8fr 1.2fr; gap: 5vw; align-items: center; margin-top: 34px; padding: 28px; background: var(--green); color: var(--ink); }
+.exclusion-grid article > span { font-family: var(--font-impact), sans-serif; color: var(--green); font-size: 40px; font-weight: 800; line-height: .8; letter-spacing: -.025em; }
+.exclusion-grid h3 { font-family: var(--font-display), sans-serif; font-size: 26px; line-height: 1; text-transform: uppercase; margin: auto 0 10px; }
+.exclusion-grid p { color: #c5cad6; font-size: 13px; line-height: 1.45; margin: 0; }
+.release-promise { display: grid; grid-template-columns: .8fr 1.2fr; gap: 5vw; align-items: center; margin-top: 24px; padding: 24px 28px; background: var(--green); color: var(--ink); }
 .release-promise strong { font-family: var(--font-impact), sans-serif; text-transform: uppercase; font-size: clamp(40px, 5vw, 70px); line-height: .9; }
 .release-promise p { margin: 0; font-size: 18px; line-height: 1.4; font-weight: 750; }
 
