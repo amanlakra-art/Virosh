@@ -456,8 +456,8 @@ export default function Home() {
           <div><span>FOR</span><p>Active adults 28 to 35 balancing work, movement and real life.</p></div>
           <div><span>VIROSH IS</span><p>A yeast-protein daily essentials system with one dependable base and optional flavour shots.</p></div>
           <div><span>THAT DELIVERS</span><p>Useful performance nutrition without the friction of managing a multi-product stack.</p></div>
-          <div><span>UNLIKE</span><p>Celebrity proteins built around hype, fixed flavours or bodybuilding theatre.</p></div>
-          <div><span>BECAUSE</span><p>The nutrition stays consistent while the experience can change with the day.</p></div>
+          <div><span>UNLIKE</span><p>Collaborations that depend on face value, fixed flavours or bodybuilding theatre.</p></div>
+          <div><span>BECAUSE</span><p>The nutritional proof stands without the faces, while flavour choice makes the ritual easier to return to.</p></div>
         </div>
 
         <div className="position-promise">
@@ -467,20 +467,26 @@ export default function Home() {
         </div>
 
         <div className="position-pillars">
-          <article>
+          <article className="pillar-foundation">
             <span>01 / FUNCTIONAL</span>
+            <strong className="pillar-signal">25 G</strong>
             <h3>Strong base</h3>
-            <p>25 g protein, optional 3 g creatine, fibre and four focused micronutrients at a provisional 50% working RDA target per scoop.</p>
+            <p>Protein anchors the nutritional promise. Optional creatine adds felt utility, while D3, B12, magnesium and zinc do quiet maintenance work at a provisional 50% working RDA target per scoop.</p>
+            <b className="pillar-key">PROOF BEFORE PROMISE</b>
           </article>
           <article>
             <span>02 / BEHAVIOURAL</span>
+            <strong className="pillar-signal">01 MOVE</strong>
             <h3>Easy return</h3>
             <p>One repeatable daily action that reduces stack friction and welcomes restarting.</p>
+            <b className="pillar-key">LESS STACK FRICTION</b>
           </article>
           <article>
             <span>03 / EMOTIONAL</span>
+            <strong className="pillar-signal">02 + 02</strong>
             <h3>Personal play</h3>
-            <p>Original plus four flavour shots make the ritual feel chosen without changing the promise.</p>
+            <p>Launch with two flavour shots, then hold two as future drops. Choice stays exciting without making V1 operationally heavy.</p>
+            <b className="pillar-key">CHOICE, NOT COMPLEXITY</b>
           </article>
         </div>
 
@@ -500,12 +506,12 @@ export default function Home() {
         <div className="partner-roles">
           <article><span>VIJAY</span><strong>Practical momentum</strong><p>Clarity, drive and proof.</p></article>
           <article><span>RASHMIKA</span><strong>Emotional invitation</strong><p>Warmth, delight and return.</p></article>
-          <article><span>VIROSH</span><strong>The shared territory</strong><p>Wellness that works hard without acting serious.</p></article>
+          <article><span>VIROSH</span><strong>The shared territory</strong><p>Wellness that works hard without acting serious. The proposition remains credible without either face.</p></article>
         </div>
 
         <div className="position-boundary">
           <span>WHAT IT REFUSES</span>
-          <p>No macho codes, medicalised clutter, guilt, perfection language or empty mega-claims.</p>
+          <p>No macho codes, medicalised clutter, guilt, perfection language, rented credibility or empty mega-claims.</p>
         </div>
       </section>
 

@@ -57,9 +57,13 @@ test("server-renders the Virosh product concept", async () => {
   assert.match(html, /WORKING DIRECTION/);
   assert.match(html, /Same strong base/);
   assert.match(html, /Useful \+ playable/);
+  assert.match(html, /PROOF BEFORE PROMISE/);
+  assert.match(html, /Launch with two flavour shots/);
+  assert.match(html, /quiet maintenance work/i);
+  assert.match(html, /nutritional proof stands without the faces/i);
   assert.match(html, /Practical momentum/);
   assert.match(html, /Emotional invitation/);
-  assert.match(html, /Celebrity proteins built around hype/);
+  assert.match(html, /Collaborations that depend on face value/);
   assert.doesNotMatch(html, /—|“|”/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
