@@ -38,8 +38,8 @@ test("server-renders the Virosh product concept", async () => {
   assert.match(html, /110 μg DFE/);
   assert.match(html, /L-5-methyltetrahydrofolate/i);
   assert.match(html, /L-methylfolate/i);
-  assert.match(html, /2.5 g/);
-  assert.match(html, /two scoops deliver 5 g/i);
+  assert.match(html, /3 g/);
+  assert.match(html, /two scoops deliver 6 g/i);
   assert.match(html, /cholecalciferol/i);
   assert.match(html, /cyanocobalamin/i);
   assert.match(html, /stabilized, light-protected standardized dry premix/i);

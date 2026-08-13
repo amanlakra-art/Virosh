@@ -86,8 +86,8 @@ const formulaVariants = {
   "with-creatine": {
     label: "Active Base",
     shortLabel: "With creatine",
-    serving: "38.5–39.5 g",
-    proof: "2.5 g",
+    serving: "39–40 g",
+    proof: "3 g",
     proofLabel: "creatine",
     rationale: "For a sharper performance position and stronger stack-collapse story.",
   },
@@ -121,10 +121,10 @@ export default function Home() {
   const formula = formulaVariants[formulaMode];
   const hasCreatine = formulaMode === "with-creatine";
   const essentials = hasCreatine
-    ? [commonEssentials[0], { dose: "2.5 g", name: "Creatine mono", role: "Micronized creatine monohydrate", mark: "C" }, ...commonEssentials.slice(1)]
+    ? [commonEssentials[0], { dose: "3 g", name: "Creatine mono", role: "Micronized creatine monohydrate", mark: "C" }, ...commonEssentials.slice(1)]
     : commonEssentials;
   const formulationRows = hasCreatine
-    ? [commonFormulationRows[0], { group: "Core blend", item: "Creatine", amount: "2.5 g", form: "Micronized creatine monohydrate" }, ...commonFormulationRows.slice(1)]
+    ? [commonFormulationRows[0], { group: "Core blend", item: "Creatine", amount: "3 g", form: "Micronized creatine monohydrate" }, ...commonFormulationRows.slice(1)]
     : commonFormulationRows;
 
   return (
@@ -302,12 +302,12 @@ export default function Home() {
           </div>
           <div className="ni-disclaimer">
             <span>FORM QUALITY</span>
-            <p>Each retained micronutrient is targeted at 50% of the higher adult ICMR-NIN 2020 working reference per scoop. Two scoops reach the full working reference, while also delivering 50 g protein, 9 g fibre and 5 g creatine in Active Base. Final identity, assay, stability, sensory performance and the applicable Indian regulatory route must still be verified. Microencapsulation is a stability specification, not a liposomal claim.</p>
+            <p>Each retained micronutrient is targeted at 50% of the higher adult ICMR-NIN 2020 working reference per scoop. Two scoops reach the full working reference, while also delivering 50 g protein, 9 g fibre and 6 g creatine in Active Base. Final identity, assay, stability, sensory performance and the applicable Indian regulatory route must still be verified. Microencapsulation is a stability specification, not a liposomal claim.</p>
           </div>
         </div>
         <div className="formula-note">
           <span>FORMULATION PRINCIPLE</span>
-          <p>{hasCreatine ? "Creatine lives in the Active Base, never in the shot. One scoop delivers 2.5 g and two scoops deliver 5 g." : "The Core Base keeps the same protein, fibre and micronutrient promise without creatine for a broader everyday proposition."}</p>
+          <p>{hasCreatine ? "Creatine lives in the Active Base, never in the shot. One scoop delivers 3 g and two scoops deliver 6 g." : "The Core Base keeps the same protein, fibre and micronutrient promise without creatine for a broader everyday proposition."}</p>
         </div>
       </section>
 
