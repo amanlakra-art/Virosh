@@ -24,6 +24,8 @@ test("server-renders the Virosh product concept", async () => {
   assert.match(html, /25 g/);
   assert.match(html, /Creatine mono/);
   assert.match(html, /Dark Chocolate Sea Salt/);
+  assert.match(html, /V1 launch recommendation/);
+  assert.match(html, /Future drop/);
   assert.match(html, /THE SYSTEM AT A GLANCE/);
   assert.match(html, /PROPOSED FORMULATION PANEL/);
   assert.match(html, /TWO FORMULATION ROUTES/);

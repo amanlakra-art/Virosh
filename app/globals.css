@@ -227,7 +227,11 @@ a { color: inherit; text-decoration: none; }
 .shot-card { min-height: 550px; border: 0; border-right: 1px solid var(--ink); background: var(--card-soft); padding: 24px; text-align: left; cursor: pointer; transition: transform .2s ease, filter .2s ease; display: flex; flex-direction: column; align-items: stretch; }
 .shot-card:last-child { border-right: 0; }
 .shot-card:hover, .shot-card:focus-visible { transform: translateY(-10px); filter: saturate(1.08); outline: 2px solid var(--ink); outline-offset: -2px; }
+.shot-meta { min-height: 24px; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
 .shot-number { font-family: var(--font-mono), monospace; font-size: 10px; font-weight: 800; }
+.shot-rollout { max-width: 145px; padding-top: 3px; border-top: 2px solid currentColor; font-family: var(--font-mono), monospace; font-size: 7px; line-height: 1.25; font-weight: 800; letter-spacing: .08em; text-align: right; text-transform: uppercase; }
+.shot-rollout.is-launch { color: var(--ink); }
+.shot-rollout.is-future { color: rgba(17,26,50,.48); border-top-width: 1px; }
 .sachet { height: 280px; width: 112px; align-self: center; margin: 35px auto; background: var(--card-accent); border: 2px solid var(--ink); padding: 17px 12px; display: flex; flex-direction: column; transform: rotate(3deg); box-shadow: 11px 13px 0 rgba(17,26,50,.14); }
 .shot-card:nth-child(even) .sachet { transform: rotate(-4deg); }
 .sachet span { font-family: var(--font-display), sans-serif; font-size: 13px; font-weight: 900; }

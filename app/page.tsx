@@ -10,6 +10,7 @@ type Flavour = {
   accent: string;
   accentSoft: string;
   ink: string;
+  rollout?: "V1 launch recommendation" | "Future drop";
 };
 
 type FormulaMode = "with-creatine" | "without-creatine";
@@ -32,6 +33,7 @@ const flavours: Flavour[] = [
     accent: "#8b4f38",
     accentSoft: "#e8c8b9",
     ink: "#fff7f1",
+    rollout: "Future drop",
   },
   {
     id: "coffee",
@@ -41,6 +43,7 @@ const flavours: Flavour[] = [
     accent: "#bd6b2d",
     accentSoft: "#f3d0a7",
     ink: "#fff9ef",
+    rollout: "V1 launch recommendation",
   },
   {
     id: "mango",
@@ -50,6 +53,7 @@ const flavours: Flavour[] = [
     accent: "#f5a800",
     accentSoft: "#ffe38a",
     ink: "#19170f",
+    rollout: "V1 launch recommendation",
   },
   {
     id: "kulfi",
@@ -59,6 +63,7 @@ const flavours: Flavour[] = [
     accent: "#7fb858",
     accentSoft: "#d8efb7",
     ink: "#13210e",
+    rollout: "Future drop",
   },
 ];
 
@@ -425,7 +430,10 @@ export default function Home() {
               style={{ "--card-accent": shot.accent, "--card-soft": shot.accentSoft } as React.CSSProperties}
               aria-label={`Preview ${shot.name}`}
             >
-              <span className="shot-number">{String(index + 1).padStart(2, "0")}</span>
+              <div className="shot-meta">
+                <span className="shot-number">{String(index + 1).padStart(2, "0")}</span>
+                {shot.rollout && <span className={`shot-rollout ${shot.rollout === "V1 launch recommendation" ? "is-launch" : "is-future"}`}>{shot.rollout}</span>}
+              </div>
               <div className="sachet"><span>VIROSH</span><b>{shot.name}</b><i>FLAVOUR SHOT</i></div>
               <h3>{shot.name}</h3>
               <p>{shot.note}</p>
