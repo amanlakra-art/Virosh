@@ -65,26 +65,26 @@ const flavours: Flavour[] = [
 const commonEssentials = [
   { dose: "25 g", name: "Yeast protein", role: "Supplier-verified protein concentrate", mark: "P" },
   { dose: "4.5 g", name: "PHGG fibre", role: "Partially hydrolysed guar gum", mark: "F" },
-  { dose: "600 IU", name: "Vitamin D3", role: "Microencapsulated D3 (Liposomal D3)", mark: "D" },
-  { dose: "2.2 μg", name: "Vitamin B12", role: "Metabolically active methylcobalamin", mark: "B" },
-  { dose: "440 mg", name: "Magnesium", role: "Non-buffered bisglycinate chelate", mark: "Mg" },
-  { dose: "17 mg", name: "Zinc", role: "Zinc bisglycinate chelate", mark: "Zn" },
+  { dose: "300 IU", name: "Vitamin D3", role: "Microencapsulated cholecalciferol D3", mark: "D" },
+  { dose: "1.1 μg", name: "Vitamin B12", role: "Stabilized cyanocobalamin dry premix", mark: "B" },
+  { dose: "220 mg", name: "Magnesium", role: "Non-buffered bisglycinate chelate", mark: "Mg" },
+  { dose: "8.5 mg", name: "Zinc", role: "Zinc bisglycinate chelate", mark: "Zn" },
 ];
 
 const commonFormulationRows = [
   { group: "Core blend", item: "Yeast protein", amount: "25 g", form: "Supplier-verified concentrate; amino-acid profile and digestibility to qualify" },
   { group: "Core blend", item: "Dietary fibre", amount: "4.5 g", form: "Partially hydrolysed guar gum (PHGG)" },
-  { group: "Vitamins", item: "Vitamin D3", amount: "15 μg / 600 IU", form: "Microencapsulated cholecalciferol D3 with lipid carrier (Liposomal D3)" },
-  { group: "Vitamins", item: "Vitamin B12", amount: "2.2 μg", form: "Methylcobalamin in a stabilized, light-protected standardized dry premix" },
-  { group: "Minerals", item: "Magnesium", amount: "440 mg elemental", form: "Fully reacted, non-buffered magnesium bisglycinate chelate" },
-  { group: "Minerals", item: "Zinc", amount: "17 mg elemental", form: "Zinc bisglycinate (chelated zinc)" },
+  { group: "Vitamins", item: "Vitamin D3", amount: "7.5 μg / 300 IU", form: "Microencapsulated cholecalciferol D3 with lipid carrier" },
+  { group: "Vitamins", item: "Vitamin B12", amount: "1.1 μg", form: "Cyanocobalamin in a stabilized, light-protected standardized dry premix" },
+  { group: "Minerals", item: "Magnesium", amount: "220 mg elemental", form: "Fully reacted, non-buffered magnesium bisglycinate chelate" },
+  { group: "Minerals", item: "Zinc", amount: "8.5 mg elemental", form: "Zinc bisglycinate (chelated zinc)" },
 ];
 
 const formulaVariants = {
   "with-creatine": {
     label: "Active Base",
     shortLabel: "With creatine",
-    serving: "41–42 g",
+    serving: "39–40 g",
     proof: "3 g",
     proofLabel: "creatine",
     rationale: "For a sharper performance position and stronger stack-collapse story.",
@@ -92,7 +92,7 @@ const formulaVariants = {
   "without-creatine": {
     label: "Core Base",
     shortLabel: "Without creatine",
-    serving: "38–39 g",
+    serving: "36–37 g",
     proof: "0 g",
     proofLabel: "creatine",
     rationale: "For broader everyday use with the same protein, fibre and focused micronutrient stack.",
@@ -276,7 +276,7 @@ export default function Home() {
               <span>PROPOSED FORMULATION PANEL</span>
               <h3>Foundation stack<br /><em>Unflavoured blend</em></h3>
             </div>
-            <p>Target base serving<br /><strong>{formula.serving}</strong></p>
+            <p>Target one-scoop base<br /><strong>{formula.serving}</strong></p>
           </div>
           <div className="ni-table-wrap">
             <table className="ni-table">
@@ -300,7 +300,7 @@ export default function Home() {
           </div>
           <div className="ni-disclaimer">
             <span>FORM QUALITY</span>
-            <p>Preferred high-availability development forms are named explicitly. "Liposomal D3" is a working descriptor and must be supported by the selected supplier's actual liposomal delivery technology. All forms still require supplier qualification, exact chemical identity, assay, stability, sensory testing and confirmation of the applicable Indian regulatory route. *Targets use the higher adult ICMR-NIN 2020 reference; final %RDA and label population require regulatory sign-off.</p>
+            <p>Each retained micronutrient is targeted at 50% of the higher adult ICMR-NIN 2020 working reference per scoop. Two scoops reach the full working reference, but also double protein, fibre and creatine when present. Ingredient forms still require supplier qualification, exact identity, assay, stability, sensory testing and confirmation of the applicable Indian regulatory route. Microencapsulation is a stability specification, not a liposomal claim.</p>
           </div>
         </div>
         <div className="formula-note">
@@ -325,6 +325,7 @@ export default function Home() {
               <li>Use a focused stack at visible, meaningful targets.</li>
               <li>Test every finished-goods batch before release.</li>
               <li>Publish batch results for protein, fibre, magnesium, D3, B12 and creatine when present.</li>
+              <li>Sell one dependable decision at purchase, with flavour as the optional play layer.</li>
             </ul>
           </article>
           <article className="principle-dont">
@@ -333,6 +334,7 @@ export default function Home() {
               <li>Add omega-3 simply to make the product easier to sell.</li>
               <li>Add token ingredients just to claim a 10-in-1 blend.</li>
               <li>Ship finished goods without the test report.</li>
+              <li>Use an unfamiliar protein source without publishing its amino-acid and quality proof.</li>
             </ul>
           </article>
         </div>
@@ -468,7 +470,7 @@ export default function Home() {
           <article>
             <span>01 / FUNCTIONAL</span>
             <h3>Strong base</h3>
-            <p>25 g protein, optional 3 g creatine, fibre and four focused micronutrients at provisional 100% RDA targets.</p>
+            <p>25 g protein, optional 3 g creatine, fibre and four focused micronutrients at a provisional 50% working RDA target per scoop.</p>
           </article>
           <article>
             <span>02 / BEHAVIOURAL</span>
@@ -516,7 +518,8 @@ export default function Home() {
           <div><span>01</span><p><b>Protein truth</b>Verify yeast protein with an amino-acid cross-check, not nitrogen alone.</p></div>
           <div><span>02</span><p><b>RDA truth</b>Reconcile the adult reference, target population and final declared values before label lock.</p></div>
           <div><span>03</span><p><b>Form truth</b>Confirm every supplier form, assay and India-specific regulatory route before pilot purchase.</p></div>
-          <div><span>04</span><p><b>Sensory truth</b>Prove that 440 mg elemental magnesium remains pleasant, dispersible and tolerable in Original.</p></div>
+          <div><span>04</span><p><b>Dose truth</b>Validate one-scoop and two-scoop use for tolerance, serving arithmetic and final label instructions.</p></div>
+          <div><span>05</span><p><b>Usage truth</b>Mix into cold, ambient or warm liquid. Do not position this adult formula as a cook-in family product.</p></div>
         </div>
       </section>
 
@@ -524,7 +527,7 @@ export default function Home() {
         <div className="footer-lockup"><span>VIROSH</span><strong>DAILY PLAY</strong></div>
         <p>Serious nutrition.<br />Zero serious-face required.</p>
         <div className="footer-meta"><span>CONCEPT DIRECTION</span><span>AUG 2026</span><span>ADULTS 18+</span></div>
-        <p className="footnote">*Zero added sugar and 100% RDA values are development targets, subject to final formulation, raw-material assay, target-population review, laboratory verification and applicable Indian regulations. This page is an NPD concept, not final consumer communication.</p>
+        <p className="footnote">*Zero added sugar and 50% working RDA values per scoop are development targets, subject to final formulation, raw-material assay, target-population review, laboratory verification and applicable Indian regulations. Two scoops double all actives and macros. This page is an NPD concept, not final consumer communication.</p>
       </footer>
     </main>
   );
