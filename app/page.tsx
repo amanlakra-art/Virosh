@@ -63,19 +63,21 @@ const flavours: Flavour[] = [
 ];
 
 const commonEssentials = [
-  { dose: "25 g", name: "Yeast protein", role: "Supplier-verified protein concentrate", mark: "P" },
+  { dose: "25 g", name: "Yeast protein", role: "Verified protein concentrate", mark: "P" },
   { dose: "4.5 g", name: "PHGG fibre", role: "Partially hydrolysed guar gum", mark: "F" },
   { dose: "300 IU", name: "Vitamin D3", role: "Microencapsulated cholecalciferol D3", mark: "D" },
   { dose: "1.1 μg", name: "Vitamin B12", role: "Stabilized cyanocobalamin dry premix", mark: "B" },
+  { dose: "110 μg DFE", name: "Vitamin B9", role: "Calcium L-5-MTHF (L-methylfolate)", mark: "B9" },
   { dose: "220 mg", name: "Magnesium", role: "Non-buffered bisglycinate chelate", mark: "Mg" },
   { dose: "8.5 mg", name: "Zinc", role: "Zinc bisglycinate chelate", mark: "Zn" },
 ];
 
 const commonFormulationRows = [
-  { group: "Core blend", item: "Yeast protein", amount: "25 g", form: "Supplier-verified concentrate; amino-acid profile and digestibility to qualify" },
+  { group: "Core blend", item: "Yeast protein", amount: "25 g", form: "Verified concentrate; amino-acid profile and digestibility to qualify" },
   { group: "Core blend", item: "Dietary fibre", amount: "4.5 g", form: "Partially hydrolysed guar gum (PHGG)" },
   { group: "Vitamins", item: "Vitamin D3", amount: "7.5 μg / 300 IU", form: "Microencapsulated cholecalciferol D3 with lipid carrier" },
   { group: "Vitamins", item: "Vitamin B12", amount: "1.1 μg", form: "Cyanocobalamin in a stabilized, light-protected standardized dry premix" },
+  { group: "Vitamins", item: "Vitamin B9", amount: "110 μg DFE", form: "Calcium L-5-methyltetrahydrofolate (L-methylfolate)" },
   { group: "Minerals", item: "Magnesium", amount: "220 mg elemental", form: "Fully reacted, non-buffered magnesium bisglycinate chelate" },
   { group: "Minerals", item: "Zinc", amount: "8.5 mg elemental", form: "Zinc bisglycinate (chelated zinc)" },
 ];
@@ -84,8 +86,8 @@ const formulaVariants = {
   "with-creatine": {
     label: "Active Base",
     shortLabel: "With creatine",
-    serving: "39–40 g",
-    proof: "3 g",
+    serving: "38.5–39.5 g",
+    proof: "2.5 g",
     proofLabel: "creatine",
     rationale: "For a sharper performance position and stronger stack-collapse story.",
   },
@@ -119,10 +121,10 @@ export default function Home() {
   const formula = formulaVariants[formulaMode];
   const hasCreatine = formulaMode === "with-creatine";
   const essentials = hasCreatine
-    ? [commonEssentials[0], { dose: "3 g", name: "Creatine mono", role: "Micronized creatine monohydrate", mark: "C" }, ...commonEssentials.slice(1)]
+    ? [commonEssentials[0], { dose: "2.5 g", name: "Creatine mono", role: "Micronized creatine monohydrate", mark: "C" }, ...commonEssentials.slice(1)]
     : commonEssentials;
   const formulationRows = hasCreatine
-    ? [commonFormulationRows[0], { group: "Core blend", item: "Creatine", amount: "3 g", form: "Micronized creatine monohydrate" }, ...commonFormulationRows.slice(1)]
+    ? [commonFormulationRows[0], { group: "Core blend", item: "Creatine", amount: "2.5 g", form: "Micronized creatine monohydrate" }, ...commonFormulationRows.slice(1)]
     : commonFormulationRows;
 
   return (
@@ -153,7 +155,7 @@ export default function Home() {
           <div className="eyebrow"><span>Daily essentials</span><i /> <span>Made playable</span></div>
           <h1>Same strong base.<br /><em>Pick your play.</em></h1>
           <p className="hero-lead">
-            A serious yeast-protein blend with fibre and four focused micronutrients. Choose the base with or without creatine, then finish it differently whenever the mood changes.
+            A serious yeast-protein blend with fibre and five focused micronutrients. Choose the base with or without creatine, then finish it differently whenever the mood changes.
           </p>
           <div className="hero-proof">
             <div><strong>25 g</strong><span>protein</span></div>
@@ -265,7 +267,7 @@ export default function Home() {
             </article>
           ))}
           <article className="formula-card formula-card-end">
-            <span>D3 · B12 · MAGNESIUM · ZINC</span>
+            <span>D3 · B12 · B9 · MAGNESIUM · ZINC</span>
             <strong>{formula.label}. One clean stack.</strong>
             <p>Target base serving: {formula.serving} before a flavour shot.</p>
           </article>
@@ -300,12 +302,12 @@ export default function Home() {
           </div>
           <div className="ni-disclaimer">
             <span>FORM QUALITY</span>
-            <p>Each retained micronutrient is targeted at 50% of the higher adult ICMR-NIN 2020 working reference per scoop. Two scoops reach the full working reference, but also double protein, fibre and creatine when present. Ingredient forms still require supplier qualification, exact identity, assay, stability, sensory testing and confirmation of the applicable Indian regulatory route. Microencapsulation is a stability specification, not a liposomal claim.</p>
+            <p>Each retained micronutrient is targeted at 50% of the higher adult ICMR-NIN 2020 working reference per scoop. Two scoops reach the full working reference, while also delivering 50 g protein, 9 g fibre and 5 g creatine in Active Base. Final identity, assay, stability, sensory performance and the applicable Indian regulatory route must still be verified. Microencapsulation is a stability specification, not a liposomal claim.</p>
           </div>
         </div>
         <div className="formula-note">
           <span>FORMULATION PRINCIPLE</span>
-          <p>{hasCreatine ? "Creatine lives in the Active Base, never in the shot, so the full 3 g dose lands reliably every time." : "The Core Base keeps the same protein, fibre and micronutrient promise without creatine for a broader everyday proposition."}</p>
+          <p>{hasCreatine ? "Creatine lives in the Active Base, never in the shot. One scoop delivers 2.5 g and two scoops deliver 5 g." : "The Core Base keeps the same protein, fibre and micronutrient promise without creatine for a broader everyday proposition."}</p>
         </div>
       </section>
 
@@ -324,7 +326,7 @@ export default function Home() {
             <ul>
               <li>Use a focused stack at visible, meaningful targets.</li>
               <li>Test every finished-goods batch before release.</li>
-              <li>Publish batch results for protein, fibre, magnesium, D3, B12 and creatine when present.</li>
+              <li>Publish batch results for protein, fibre, magnesium, D3, B12, B9 and creatine when present.</li>
               <li>Sell one dependable decision at purchase, with flavour as the optional play layer.</li>
             </ul>
           </article>
@@ -471,7 +473,7 @@ export default function Home() {
             <span>01 / FUNCTIONAL</span>
             <strong className="pillar-signal">25 G</strong>
             <h3>Strong base</h3>
-            <p>Protein anchors the nutritional promise. Optional creatine adds felt utility, while D3, B12, magnesium and zinc do quiet maintenance work at a provisional 50% working RDA target per scoop.</p>
+            <p>Protein anchors the nutritional promise. Optional creatine adds felt utility, while D3, B12, B9, magnesium and zinc do quiet maintenance work at a provisional 50% working RDA target per scoop.</p>
             <b className="pillar-key">PROOF BEFORE PROMISE</b>
           </article>
           <article>
@@ -523,7 +525,7 @@ export default function Home() {
         <div className="guardrail-list">
           <div><span>01</span><p><b>Protein truth</b>Verify yeast protein with an amino-acid cross-check, not nitrogen alone.</p></div>
           <div><span>02</span><p><b>RDA truth</b>Reconcile the adult reference, target population and final declared values before label lock.</p></div>
-          <div><span>03</span><p><b>Form truth</b>Confirm every supplier form, assay and India-specific regulatory route before pilot purchase.</p></div>
+          <div><span>03</span><p><b>Form truth</b>Confirm every ingredient identity, assay and India-specific regulatory route before pilot purchase.</p></div>
           <div><span>04</span><p><b>Dose truth</b>Validate one-scoop and two-scoop use for tolerance, serving arithmetic and final label instructions.</p></div>
           <div><span>05</span><p><b>Usage truth</b>Mix into cold, ambient or warm liquid. Do not position this adult formula as a cook-in family product.</p></div>
         </div>

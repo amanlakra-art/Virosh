@@ -35,6 +35,11 @@ test("server-renders the Virosh product concept", async () => {
   assert.match(html, /non-buffered/i);
   assert.match(html, /8.5 mg elemental/);
   assert.match(html, /1.1 μg/);
+  assert.match(html, /110 μg DFE/);
+  assert.match(html, /L-5-methyltetrahydrofolate/i);
+  assert.match(html, /L-methylfolate/i);
+  assert.match(html, /2.5 g/);
+  assert.match(html, /two scoops deliver 5 g/i);
   assert.match(html, /cholecalciferol/i);
   assert.match(html, /cyanocobalamin/i);
   assert.match(html, /stabilized, light-protected standardized dry premix/i);
@@ -52,7 +57,7 @@ test("server-renders the Virosh product concept", async () => {
   assert.match(html, /50% of the higher adult ICMR-NIN 2020 working reference per scoop/i);
   assert.match(html, /Two scoops reach the full working reference/i);
   assert.doesNotMatch(html, /Liposomal D3/);
-  assert.doesNotMatch(html, /Algal DHA|Selenium|Vitamin B1\b|Vitamin B5\b|Vitamin B6\b|Vitamin B7\b|Vitamin B9\b|Vitamin C\b|Vitamin E\b/);
+  assert.doesNotMatch(html, /Algal DHA|Selenium|Vitamin B1\b|Vitamin B5\b|Vitamin B6\b|Vitamin B7\b|Vitamin C\b|Vitamin E\b/);
   assert.match(html, /Playable daily/);
   assert.match(html, /WORKING DIRECTION/);
   assert.match(html, /Same strong base/);
